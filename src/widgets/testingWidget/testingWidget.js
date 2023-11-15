@@ -44,51 +44,50 @@ class TestingWidget {
     }
 
     const widgetsList = [
-      { spawn: 'puzzle', despawn: 'puzzle-widget', name: 'Puzzle' },
+      // { spawn: 'puzzle', despawn: 'puzzle-widget', name: 'Puzzle' },
       { spawn: 'wheel', despawn: 'wheelOfFortune', name: 'Wheel Of Fortune' },
-      { spawn: 'stone', despawn: 'stone-container', name: 'Stone' },
-      { spawn: 'ice', despawn: 'ice-widget', name: 'Ice' },
-      { spawn: 'penguin', despawn: 'penguin-widget', name: 'Penguin' },
-      { spawn: 'snake', despawn: 'snake', name: 'Snake' },
-      { spawn: 'claw', despawn: 'claw', name: 'Claw Machine Widget' },
-      { spawn: 'cats', despawn: 'cats', name: 'Cats Widget' },
-      { spawn: 'hedgehog', despawn: 'hedgehog', name: 'Hedgehog Widget' },
-      { spawn: 'guess', despawn: 'guess', name: 'Guess image Widget' },
-      { spawn: 'whack', despawn: 'whack', name: 'Whack mole Widget' },
-      { spawn: 'maze', despawn: 'maze', name: 'Maze Widget' },
-      { spawn: 'pacman', despawn: 'pacman', name: 'Pacman Widget' },
-      { spawn: 'start_widget', despawn: 'start_widget', name: 'start Widget' },
+      // { spawn: 'stone', despawn: 'stone-container', name: 'Stone' },
+      // { spawn: 'ice', despawn: 'ice-widget', name: 'Ice' },
+      // { spawn: 'penguin', despawn: 'penguin-widget', name: 'Penguin' },
+      // { spawn: 'snake', despawn: 'snake', name: 'Snake' },
+      // { spawn: 'claw', despawn: 'claw', name: 'Claw Machine Widget' },
+      // { spawn: 'cats', despawn: 'cats', name: 'Cats Widget' },
+      // { spawn: 'hedgehog', despawn: 'hedgehog', name: 'Hedgehog Widget' },
+      { spawn: 'guess', despawn: 'guess', name: 'Guess image game' },
+      { spawn: 'whack', despawn: 'whack', name: 'Whack mole game' },
+      // { spawn: 'maze', despawn: 'maze', name: 'Maze Widget' },
+      // { spawn: 'pacman', despawn: 'pacman', name: 'Pacman Widget' },
+      // { spawn: 'start_widget', despawn: 'start_widget', name: 'start Widget' },
     ];
 
     let buttonsHtml = '';
     widgetsList.forEach((widget) => {
       const spawnBtnId = `SpawnBtn_${widget.spawn}`;
 
-      buttonsHtml += `<div style='width:100%;margin-bottom:10px'>
-      ${
-        widget.spawn === 'snake'
+      buttonsHtml += `<div style='width:100%;margin-bottom:10px '>
+      ${widget.spawn === 'snake'
           ? `<p style='margin-top:20px;margin-bottom:30px;'>Coming soon</p>`
           : ''
-      }
-          <button class='go_button' style='margin:0px 10px;font-size: 12px !important;width:160px !important' data-widget-spawn='${
-            widget.spawn
-          }' id='${spawnBtnId}'>${widget.name}</button>
+        }
+          <button class='go_button' style='margin:0px 10px;font-size: 12px !important;width:160px !important; background: radial-gradient( circle farthest-corner at 10% 20%, rgba(237,3,32,0.87) 20.8%, rgba(242,121,1,0.84) 74.4% ) !important;' data-widget-spawn='${widget.spawn
+        }' id='${spawnBtnId}'>${widget.name}</button>
         </div>`;
     });
 
     animationEl.innerHTML = `
-      <div  class='position-relative product-design-bg-2 Preview-select' style='z-index:10000000000000; min-width: 260px;min-height: 320px; padding: 20px 0px;position:relative;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border: 1px solid #ddd' id='widget_test'>
+      <div  class='position-relative product-design-bg-2 Preview-select' style='z-index:10000000000000; min-width: 260px;height: 220px !important; 
+      padding: 20px 0px;position:relative;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border: 1px solid #ddd' id='widget_test'>
         <div class='close_button align-right'>
           <img src='${closeIcon}' width='30' height='30' alt='' id="close_div_img">
         </div>
         <div class='coupon__preview__body coupon_discount_modal'>
-            <h2>Widgets Preview</h2>
+            <h2>Some fun</h2>
             <div class='coupon__preview__card__header_buttons text-center d-block'>
 
             ${buttonsHtml}          
           </div>
           <div class='coupon__preview__card__header text-center d-block'>
-          <div style='width:100%;margin-bottom:14px;'>
+          <div style='width:100%;margin-bottom:14px; display: none;'>
           <button class='go_button' id='remove_div_btn' style='margin-top:10px'>Remove All</button>
         </div>        
         </div>
