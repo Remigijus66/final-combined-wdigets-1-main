@@ -21,7 +21,7 @@ export const defaultList = [
   },
   {
     color: [{ pct: 0.1414, clr: "#E16A6A" }, { pct: 0.4902, clr: "#FF7664" }],
-    label: 'Try again',
+    label: '100 % OFF',
   },
 ];
 
