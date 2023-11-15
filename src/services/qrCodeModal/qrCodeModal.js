@@ -15,13 +15,15 @@ export default class {
   constructor() {
     this.updateConfigData();
     this.mainContainer = widgetHtmlService.container;
-    if (!this.config?.email_collection_required) {
-      this.showQrCode();
-    } else {
-      this.updateConfigData();
-      this.showTextfield();
-    }
+    // if (!this.config?.email_collection_required) {
+    //   this.showQrCode();
+    // } else {
+    //   this.updateConfigData();
+    //   this.showTextfield();
+    // }
     this.showWinningAnimation();
+    this.showGreetings();
+
   }
 
   showQrCode = () => {
@@ -200,7 +202,23 @@ export default class {
           winningAnimation.remove();
         }, 3000);
       });
-    }, 100);
+    }, 200);
+  };
+
+  showGreetings = () => {
+    setTimeout(() => {
+    const greetings = document.createElement('h1')
+    assignStyleOnElement(greetings.style, {position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    color: 'red'});
+    greetings.innerHTML = 'Its a win!'
+    this.mainContainer.appendChild(greetings)
+    setTimeout(() => {
+      greetings.remove();
+    }, 3200);
+  }, 100);
   };
 
   closeModal = (exit) => {
