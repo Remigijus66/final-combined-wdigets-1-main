@@ -143,10 +143,13 @@ class WheelOfFortuneWidget {
     this.ctx.canvas.style.transform = `rotate(${this.ang - this.PI / 2}rad)`;
     this.elSpin.innerHTML = !this.angVel
       ? 'SPIN'
-      : `      
-            <img style="width: 40px; height: 40px" src="https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/wheelof-fortune/images/wheelOfFortuneWidget/fav-boomiyo.png?raw=true"></img>
-        `;
-    // this.elSpin.style.background = sector.color;
+      : '';
+      //  `      
+      //       <img style="width: 40px; height: 40px" src="https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/wheelof-fortune/images/wheelOfFortuneWidget/fav-boomiyo.png?raw=true"></img>
+      //   `;
+    this.elSpin.style.background = !this.angVel
+    ? 'black'
+    : sector.color[0].clr;
 
     this.elSpin.style.color = 'white';
   };

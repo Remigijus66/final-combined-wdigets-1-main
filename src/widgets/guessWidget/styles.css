@@ -221,7 +221,7 @@ background-color: #B0AFBE !important;
   border-radius: 12px;
   pointer-events: none;
   backface-visibility: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
   transition: transform 0.25s linear;
 }
 
@@ -251,8 +251,8 @@ background-color: #B0AFBE !important;
   .boomio-guess-cards {
     height: 250px;
     width: 250px;
-    margin-top:120px;
-    margin-left: 100px;
+    margin-top:180px;
+    margin-left: 170px;
   }
 
   .boomio-guess-cards .boomio-guess-card {
@@ -269,7 +269,7 @@ background-color: #B0AFBE !important;
   }
 
   .action-icon {
-    top: 180px;
+    top: 260px;
   }
 
   .action-icon :first-child {
@@ -282,12 +282,12 @@ background-color: #B0AFBE !important;
   }
 
   .close {
-    left: 430px;
+    left: 500px;
 
   }
 
   .move {
-    left: 380px;
+    left: 450px;
   }
 
   #boomio-guess-container {

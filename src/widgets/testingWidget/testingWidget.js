@@ -82,6 +82,7 @@ class TestingWidget {
         </div>
         <div class='coupon__preview__body coupon_discount_modal'>
             <h2>Some fun</h2>
+            <span> A few widgets built by me </span>
             <div class='coupon__preview__card__header_buttons text-center d-block'>
 
             ${buttonsHtml}          

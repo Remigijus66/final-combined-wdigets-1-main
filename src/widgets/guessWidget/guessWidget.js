@@ -39,13 +39,13 @@ class GuessWidget {
 
   createContainer = () => {
     const queIcon =
-      'https://raw.githubusercontent.com/boomio-api-v2/final-combined-wdigets-1/1c01bd6fb616cfea26f25c6287d2d860d987ae63/src/widgets/guessWidget/que_icon.svg';
+      'https://raw.githubusercontent.com/Remigijus66/final-combined-wdigets-1-main/7a3c187505a28481171547976dde345656925ed0/src/widgets/guessWidget/que_icon.svg';
     const img1 =
-      'https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/quessWidget-new-design/src/widgets/guessWidget/img-1.png?raw=true';
+      'https://github.com/Remigijus66/final-combined-wdigets-1-main/blob/7a3c187505a28481171547976dde345656925ed0/src/widgets/guessWidget/img-1.png?raw=true';
     const img7 =
-      'https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/guess3/src/widgets/guessWidget/img-7.png?raw=true';
+      'https://github.com/Remigijus66/final-combined-wdigets-1-main/blob/7a3c187505a28481171547976dde345656925ed0/src/widgets/guessWidget/img-7.png?raw=true';
     const center =
-      'https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/guess3/src/widgets/guessWidget/center.png?raw=true';
+      'https://github.com/Remigijus66/final-combined-wdigets-1-main/blob/7a3c187505a28481171547976dde345656925ed0/src/widgets/guessWidget/center.png?raw=true';
     const myCanvas = document.createElement('div');
     myCanvas.setAttribute('id', 'boomio-guess-container');
     myCanvas.classList.add(
@@ -148,10 +148,9 @@ class GuessWidget {
     cards.forEach((card, i) => {
       card.classList.remove('flip');
       let imgTag = card.querySelector('.boomio-back-view img');
+ 
+    imgTag.src = `https://github.com/Remigijus66/final-combined-wdigets-1-main/blob/dev/src/widgets/guessWidget/img-${i < 4 ? arr[i] : i > 4 ? arr[i - 1] : ''}.png?raw=true`;
 
-      imgTag.src = `https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/quessWidget-new-design/src/widgets/guessWidget/img-${
-        i < 4 ? arr[i] : i > 4 ? arr[i - 1] : ''
-      }.png?raw=true`;
     });
 
     setTimeout(() => {
