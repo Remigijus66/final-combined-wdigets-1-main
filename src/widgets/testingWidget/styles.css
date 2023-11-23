@@ -192,7 +192,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   letter-spacing: -0.03em;
   color: #473F4E;
@@ -212,4 +212,7 @@
   text-align: center;
   letter-spacing: 0.05em;
   color: #473F4E;
+}
+.coupon__preview__card__header_buttons {
+  padding: 20px 10px 10px 10px !important;
 }
