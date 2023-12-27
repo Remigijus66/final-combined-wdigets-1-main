@@ -1,6 +1,8 @@
 export const closeIcon =
 'https://raw.githubusercontent.com/Remigijus66/final-combined-wdigets-1-main/main/images/startWidget/close.png';
 
+
+
 export const giftImage =
   'https://github.com/boomio-api-v2/final-combined-wdigets-1/blob/main/images/startWidget/gift_img.png?raw=true';
 export const gifIcon =
