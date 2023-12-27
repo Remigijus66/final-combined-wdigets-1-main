@@ -1,5 +1,6 @@
 import { widgetHtmlService, boomioService, DragElement } from '@/services';
 import { closeIcon } from '@/сonstants/icons';
+import { infoIcon } from '@/сonstants/icons';
 import './styles.css';
 
 class TestingWidget {
@@ -79,6 +80,9 @@ class TestingWidget {
       padding: 20px 0px;position:relative;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border: 1px solid #ddd' id='widget_test'>
         <div class='close_button align-right'>
           <img src='${closeIcon}' width='30' height='30' alt='' id="close_div_img">
+        </div>
+        <div class='close_button align-right'>
+          <img src='${infoIcon}' width='30' height='30' alt='' id="close_div_img">
         </div>
         <div class='coupon__preview__body coupon_discount_modal'>
             <h2>Some fun</h2>
