@@ -9,6 +9,15 @@
     letter-spacing: -0.03em;
     color: #473F4E;
 }
+ .bud{
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #fafafa;
+ }
 
 .coupon_user_gets_modal_button{
     width: 53%;
@@ -90,7 +99,21 @@
     border-radius: 10px;
     padding: 0;
 }
-  
+.info-button {
+
+    display: flex;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 9px;
+    justify-content: center;
+    border-radius: 32px !important;
+    width: 156px !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    margin:   15px auto;
+
+}  
+
   .go_button {
     /* background: linear-gradient(39.06deg, #8559F3 8.58%, #657BEA 17.79%, #34B0DC 46.68%, #15D1D3 72.63%, #09DDD0 88.95%) !important; */
     background: radial-gradient( circle farthest-corner at 10% 20%, rgba(237,3,32,0.87) 20.8%, rgba(242,121,1,0.84) 74.4% ) !important;
@@ -106,6 +129,7 @@
     line-height: 22px !important;
     color: #FFFFFF !important;
     cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
   .scrollable-container {
     overflow: auto;
@@ -180,6 +204,23 @@
   cursor: pointer;
 }
 
+.info_button {
+  position: absolute;
+  top: 16px;
+  right: 40px;
+  cursor: pointer;
+}
+.info_modal {
+  position: absolute;
+  top: -27px;
+  right: -60px;
+  background-color: #fafafa;
+  z-index: 10000000000;
+  padding: 30px 5px 5px 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
 .coupon__preview__card__header {
   padding: 20px 32px 0px 32px;
   justify-content: space-between;
@@ -215,4 +256,9 @@
 }
 .coupon__preview__card__header_buttons {
   padding: 20px 10px 10px 10px !important;
+}
+p {
+  text-indent: 10px;
+  text-align: justify;
+  margin: 5px;
 }
