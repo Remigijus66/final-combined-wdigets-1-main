@@ -1,12 +1,36 @@
 import { widgetHtmlService, boomioService, DragElement } from '@/services';
-import { closeIcon } from '@/сonstants/icons';
-import { infoIcon } from '@/сonstants/icons';
+import { closeIcon, infoIcon} from '@/сonstants/icons';
+// import { infoIcon } from '@/сonstants/icons';
 import './styles.css';
 
 class TestingWidget {
   constructor() {
-    this.startAnimation();
+    this.startBud()
+    // this.startAnimation();
   }
+  startBud = () => {
+    const width = 220;
+    const height = 20;
+    const { clientWidth, clientHeight } = document.documentElement;
+
+    const posx = ((clientWidth - width) / 2).toFixed();
+    const posy = ((clientHeight - height) / 2).toFixed();
+    const budEl = document.createElement('div')
+    budEl.style.position = 'absolute';
+     budEl.style.top = `${posy}px`;
+     budEl.style.left = `30px`;
+     budEl.style.width = `${width}px`;
+     budEl.style.height = `${height}px`;
+     budEl.innerHTML = `BOOMIO project`;
+
+     budEl.className = 'bud'
+     budEl.id = 'bud'
+     document.body.appendChild(budEl);
+
+     document.getElementById('bud').addEventListener('mouseover', (e) => { e.preventDefault(); this.startAnimation() });
+
+  }
+
   startAnimation = () => {
     localStorage.setItem('testing_Widgets', true);
     const width = 260;
@@ -16,23 +40,57 @@ class TestingWidget {
     const posx = ((clientWidth - width) / 2).toFixed();
     const posy = ((clientHeight - height) / 2).toFixed();
 
+
+
     const animationEl = document.createElement('div');
     animationEl.style.position = 'absolute';
     animationEl.style.top = `${posy}px`;
     animationEl.style.left = `30px`;
     animationEl.style.width = `${width}px`;
     animationEl.style.height = `${height}px`;
+  
+
+
+    
 
     document.body.appendChild(animationEl);
 
     new DragElement(animationEl);
 
     function closeModalDiscount() {
-      console.log('element');
-
       removeWidgets();
       localStorage.removeItem('testing_Widgets');
       animationEl.remove();
+    }
+
+    function openInfoModal() {
+         const infoModal = document.createElement('div')
+      infoModal.innerHTML = `      <div class='close_button align-right'>
+      <img src='${closeIcon}' width: '30' height='30' alt='' id="close_info_img">
+    </div>
+    <img src='${infoIcon}'   alt='' id="info_div_img" style="opacity: 0.7;
+    width: 40px">
+   
+    <p>
+    In 2023 I was working in a team building Boomio project. This project is designed to boost e-shops efficiency by gamifying the shopping process and thus gaining  additional visibility for partnering brands and helping customers make quicker purchase decisions, ensuring an engaging buying experience, by using Boomio's quick, fun games.  Initially built as a shopify plugin the project grew to universal e-shop tool.
+    </p>
+    <p>
+    I have added few my-built games here to feel the spirit of this app, however if you want to see the project in action or have more info about it, please visit <a href="https://boomio-e-shop.myshopify.com/products/spin-the-wheel-mug" target="_blank"> demo-shop </a> or  <a href="https://www.boomio.com/" target="_blank">boomio site.</a> 
+    </p>
+    <p>Code of the games is
+    <a href="https://github.com/Remigijus66/final-combined-wdigets-1-main" target="_blank">here.</a> 
+    </p>
+     `
+      infoModal.className = 'info_modal'
+      infoModal.id = 'info_modal'
+
+   animationEl.appendChild(infoModal)
+   document.getElementById('close_info_img').onclick = closeInfoModal;
+     
+    }
+    
+    function closeInfoModal() {
+          animationEl.removeChild(document.getElementById('info_modal'))
     }
 
     function removeWidgets() {
@@ -76,17 +134,18 @@ class TestingWidget {
     });
 
     animationEl.innerHTML = `
-      <div  class='position-relative product-design-bg-2 Preview-select' style='z-index:10000000000000; min-width: 260px;height: 220px !important; 
+      <div  class='position-relative product-design-bg-2 Preview-select' style='z-index:10000000000000; min-width: 260px;height: 240px !important; 
       padding: 20px 0px;position:relative;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border: 1px solid #ddd' id='widget_test'>
         <div class='close_button align-right'>
-          <img src='${closeIcon}' width='30' height='30' alt='' id="close_div_img">
+          <img src='${closeIcon}' width: '30' height='30' alt='' id="close_div_img">
         </div>
-        <div class='close_button align-right'>
-          <img src='${infoIcon}' width='30' height='30' alt='' id="close_div_img">
+        <div  id="info_div_img" class='info-button'>
+        <h2>Project info</h2>
+         
         </div>
         <div class='coupon__preview__body coupon_discount_modal'>
-            <h2>Some fun</h2>
-            <span> A few widgets built by me </span>
+     
+            <span> Games </span>
             <div class='coupon__preview__card__header_buttons text-center d-block'>
 
             ${buttonsHtml}          
@@ -112,6 +171,7 @@ class TestingWidget {
       event.stopPropagation();
     });
     document.getElementById('close_div_img').onclick = closeModalDiscount;
+    document.getElementById('info_div_img').onclick = openInfoModal;
     document.getElementById('remove_div_btn').onclick = removeWidgets;
 
     let prevWidget = '';
